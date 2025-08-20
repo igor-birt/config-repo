@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: catalog
+
+server:
+  port: 0   # random free port; Gateway will find it via Eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+# CSV file location & load size
+app:
+  catalog:
+    classpath: "/jcpenney_com_ecommerce_sample.csv"
+    maxRows: 5000
+
+# Optional synthetic delay to play with Resilience4j
+  delayMs:
+    min: 100
+    max: 800
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
