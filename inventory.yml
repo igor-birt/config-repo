@@ -1,6 +1,6 @@
 spring:
   application:
-    name: catalog
+    name: inventory
 
 server:
   port: 0
@@ -11,15 +11,15 @@ management:
       exposure:
         include: health,info
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
 app:
-  catalog:
+  inventory:
     classpath: "/jcpenney_com_ecommerce_sample.csv"
     maxRows: 20000
     delayMs:
       min: 100
       max: 800
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
