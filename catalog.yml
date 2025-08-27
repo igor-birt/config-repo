@@ -16,8 +16,8 @@ app:
     classpath: "/jcpenney_com_ecommerce_sample.csv"
     maxRows: 20000
     delayMs:
-      min: 100
-      max: 800
+      min: 2000
+      max: 2500
 
 eureka:
   client:
