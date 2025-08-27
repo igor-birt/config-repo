@@ -1,9 +1,9 @@
+server:
+  port: 0
+
 spring:
   application:
     name: product
-
-server:
-  port: 0
 
 management:
   endpoints:
