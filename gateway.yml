@@ -12,6 +12,25 @@ spring:
             locator:
               enabled: true
               lower-case-service-id: true
+      routes:
+        - id: product-route
+          uri: lb://product
+          predicates:
+            - Path=/api/products/**
+          filters:
+            - StripPrefix=1
+        - id: catalog-route
+          uri: lb://catalog
+          predicates:
+            - Path=/api/catalog/**
+          filters:
+            - StripPrefix=1
+        - id: inventory-route
+          uri: lb://inventory
+          predicates:
+            - Path=/api/inventory/**
+          filters:
+            - StripPrefix=1
 
 eureka:
   client:
